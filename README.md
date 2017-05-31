@@ -1,1 +1,3 @@
-# music-history-6
+# music-history-8
+
+### Firebase, Jquery, Browserify, and Materialize
