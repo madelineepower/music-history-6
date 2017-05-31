@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Music History</title>
+     <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="body-wrapper">
+    <div id="navbar" class="z-depth-2">
+      <ul>
+        <li><a id="list-music-link" href="#">List Music</a> |</li>
+        <li><a id="add-music-link" href="#">Add Music</a> </li>
+      </ul>
+    </div>
+  <div id="main-content-container">
+    <div class="List-Music-View">
+      <div id="filter-options" class="z-depth-2">
+        Song length:<br />
+        <input type="range" name="song-length" min="0" max="10" /><br /><br />
+        <button class="dropdown-button" data-activates="dropdown1">Artists<i class="material-icons right">arrow_drop_down</i></button>
+        <ul id="dropdown1" class="dropdown-content">
+          <li value="Beyonce" class="artists">Beyonce</li>
+          <li value="Usher" class="artists">Usher</li>
+          <li value="Chris Stapleton" class="artists">Chris Stapleton</li>
+          <li value="Idina Menzel" class="artists">Idina Menzel</li>
+          <li value="Rihanna" class="artists">Rihanna</li>
+        </ul><br /><br />
+        <button class="dropdown-button" data-activates="dropdown2">Albums<i class="material-icons right">arrow_drop_down</i></button>
+        <ul name="album" id="dropdown2" class="dropdown-content">
+          <li value="Traveller">Traveller</li>
+          <li value="My Way">My Way</li>
+          <li value="Beyonce">Beyonce</li>
+          <li value="Frozen">Frozen</li>
+          <li value="Home">Home</li>
+        </ul><br /><br />
+        Genre:<br />
+        <div class="checkboxes">
+        <div class="column1">
+        <label><input type="checkbox" name="genre1" value="rock" />Rock</label><br />
+        <label><input type="checkbox" name="genre3" value="pop" />Pop</label><br />
+        <label><input type="checkbox" name="genre5" value="blues" />Blues</label></div>
+        <div class="column2">
+        <label><input type="checkbox" name="genre2" value="classical" />Classical</label><br />
+        <label><input type="checkbox" name="genre4" value="jazz" />Jazz</label><br />
+        <label><input type="checkbox" name="genre6" value="hip-hop" />Hip hop</label></div>
+      </div>
+        <br />
+        <button type="button">Filter</button>
+      </div>
+      <div id="song-names-container" class="z-depth-2">
+        <div id="song-names">
+        </div>
+        <button id="moreBtn">More ></button>
+      </div>
+    </div>
+    <div class="Add-Music-View">
+      <label>Song Name: <input id="song-input" type="text" name="song-name"/></label><br />
+      <label>Artist: <input id="artist-input" type="text" name="artist"/></label><br />
+      <label>Album: <input id="album-input" type="text" name="album"/></label><br />
+      <button id="addButton">Add</button>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="dist/app.js"></script>
+  </body>
+</html>

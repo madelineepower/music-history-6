@@ -1,0 +1,111 @@
+body {
+  margin: 5%;
+  font-family: Arial, sans-serif;
+}
+
+#navbar {
+  // border: 2px solid black;
+}
+#navbar ul {
+  padding: 0 0 0 2%;
+}
+#navbar ul li {
+  list-style-type: none;
+  display: inline;
+  font-size: 0.9em;
+}
+
+#main-content-container {
+  margin: 0 auto;
+}
+
+.List-Music-View {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.Add-Music-View {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 10%;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+#filter-options {
+  // border: 2px solid black;
+  width: 25%;
+  margin: 2% 1% 0 0;
+  display: inline-block;
+  padding: 1%;
+  font-size: 0.9em;
+}
+
+button {
+  background-color: rgb(221, 157, 240);
+  border: none;
+  // text-align: center;
+  font-size: 1em;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: white;
+    a {
+      color: white;
+    }
+}
+
+
+#moreBtn {
+  margin-top: 2%;
+}
+.checkboxes {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.column1 {
+  width: 40%;
+}
+.column2 {
+  width: 60%;
+}
+#song-names-container {
+  // border: 2px solid black;
+  width: 75%;
+  height: 450px;
+  margin: 2% 0 0 1%;
+  display: inline-block;
+  padding: 0 1% 1% 2%;
+  overflow-y: scroll;
+}
+
+#moreBtn {
+  font-size: .8em;
+}
+
+#song-names h5 {
+  font-weight: lighter;
+  margin-bottom: 1%;
+}
+
+#song-names p {
+  display: inline;
+  font-size: 0.9em;
+}
+
+.deleteBtn {
+  padding: .5%;
+  width: 80px;
+  font-size: .7em;
+}
