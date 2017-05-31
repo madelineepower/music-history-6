@@ -3,9 +3,10 @@
 let $ = require('jquery'),
     db = require('./db-interact'),
     view = require('./view'),
-    show = require('./data-organize'),
+    show = require('./dom-build'),
     filter = require('./filter');
 
+require('materialize-css/js/dropdown.js');
 
 $(".Add-Music-View").hide();
 
@@ -24,9 +25,14 @@ $('#addButton').click(function(){
   });
 });
 
-$(document).on("click", ".artists", function(event) {
- let artist = event.target.textContent;
- filter.filterByArtist(artist);
+// $(document).on("click", ".artists", function(event) {
+//  let artist = event.target.textContent;
+//  filter.filterByArtist(artist);
+// });
+
+$(document).on("click", ".artist-filter", function(event) {
+  let artist = event.target.textContent;
+  $('#artist-div').html(artist);
 });
 
 $(document).on("click", ".delete-btn", function(event) {
@@ -41,11 +47,18 @@ $(document).on("click", ".delete-btn", function(event) {
   });
 });
 
+$(document).on("click", "#filter-btn", function(event){
+  console.log(event);
+  let artist = $('#artist-div').html();
+    filter.filterSongs(artist);
+    // show.showSongs(filteredSongs);
+});
 
 $(document).ready(function(){
 db.getSongs()
 .then(function(data){
   console.log(data);
   show.showSongs(data);
+  show.filterForm(data);
 });
 });

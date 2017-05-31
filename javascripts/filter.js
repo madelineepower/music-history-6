@@ -2,14 +2,36 @@
 
 let $ = require('jquery'),
     db = require('./db-interact'),
-    data = require("./data-organize");
+    data = require("./dom-build"),
+    show = require('./dom-build.js');
 
-let filterByArtist = (artist) => {
+let filterSongs = (artist) => {
   console.log("this artist was chosen", artist);
-  //get song array..how? need to make ajax call again?
-  // when finds a match, put into a new array
-  // pass new array into show songs function
+  db.getSongs()
+  .then(function(data) {
+  var filteredSongs = { songs: { } };
+  var artistChosen = artist;
+  for (var key in data) {
+      var currentSong = data[key];
+      if (currentSong.artist == artistChosen) {
+        filteredSongs.songs = currentSong;
+      }
+  }
+  console.log(filteredSongs);
+  show.showSongs(filteredSongs);
+});
 };
-//function to get user input from the album dropdown, make new array, and display songs
 
-module.exports = {filterByArtist};
+
+module.exports = {filterSongs};
+
+// var filteredSongs = { songs: { } };
+//
+// for (var key in existingSongObjectFromFirebase.songs) {
+//     var currentSong = existingSongObjectFromFirebase.songs[key];
+//
+//     // Check if the currentSong.artist key value matches what the user selected
+//     // If it does, add the current song to the `filteredSongs.song` object
+// }
+//
+// // Update the DOM with the filtered songs object

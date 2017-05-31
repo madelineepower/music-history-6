@@ -2,7 +2,7 @@
 
 let $ = require('jquery'),
     db = require('./db-interact');
-
+require('materialize-css/js/dropdown.js');
 
 var showSongs = (data) => {
   var songs = data;
@@ -35,4 +35,15 @@ var showSongs = (data) => {
       return newSongObject;
  };
 
-module.exports = {showSongs, makeSongObj};
+let filterForm = (data) => {
+  let songList = data;
+  for (let song in songList) {
+      let artistList = `<li class="artist-filter">${songList[song].artist}</li>`;
+      let albumList = `<li>${songList[song].album}</li>`;
+      $('#dropdown1').append(artistList);
+      $('#dropdown2').append(albumList);
+  }
+
+};
+
+module.exports = {showSongs, makeSongObj, filterForm};
